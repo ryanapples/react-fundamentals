@@ -9,7 +9,7 @@
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
 
   <script type="text/babel">
-    // 🐨 on the script tag above, change `type="module"`
+    // 🐨 on the script tag above, change `type="module"` to type="text/babel"
 
     // 🐨 re-implement this using JSX
     /*
@@ -22,10 +22,17 @@
     // Original Exercise
     // const element = <div className="container">Hello World</div>
 
-    // Extra Credit
+    /* Extra Credit #1
     const className = 'container'
     const children = 'Hello World'
     const element = <div className={className}>{children}</div>
+    */
+
+    // Extra Credit #2
+    const children = 'Hello World'
+    const className = 'container'
+    const props = {children, className}
+    const element = <div {...props} />
 
     ReactDOM.render(element, document.getElementById('root'))
   </script>
