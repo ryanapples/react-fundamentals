@@ -21,7 +21,7 @@
     //   </div>
     // )
 
-    // Extra Credit #1
+    // Extra Credit #1 - using a custom component with React.createElement
     // const element = (
     //   <div className="container">
     //     {React.createElement(message, {children: 'Hello World'})}
@@ -29,19 +29,33 @@
     //   </div>
     // )
 
-    // Extra Credit #2
-    function Message({children}) {
-      return <div className="message">{children}</div>
+    // Extra Credit #2 - using a custom component with JSX
+    // function Message({children}) {
+    //   return <div className="message">{children}</div>
+    // }
+
+    // const element = (
+    //   <div class="container">
+    //     <Message>Hello World</Message>
+    //     <Message>Goodbye World</Message>
+    //   </div>
+    // )
+
+    // Extra Credit #3 - Runtime validation with PropTypes
+    function Message({subject, greeting}) {
+      return (
+        <div className="message">
+          {greeting}, {subject}
+        </div>
+      )
     }
 
     const element = (
-      <div class="container">
-        <Message>Hello World</Message>
-        <Message>Goodbye World</Message>
+      <div className="container">
+        <Message greeting="Hello" subject="World" />
+        <Message greeting="Goodbye" subject="World" />
       </div>
     )
-
-    // Extra Credit #3
 
     // 💯 This is only the first step to making actual React components. The rest is in the extra credit!
     ReactDOM.render(element, document.getElementById('root'))
