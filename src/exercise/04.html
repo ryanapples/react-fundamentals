@@ -44,6 +44,18 @@
     // )
 
     // Extra Credit #3 - Runtime validation with PropTypes
+    // const PropTypes = {
+    //   string(props, propName, componentName) {
+    //     if (typeof props[propName] !== 'string') {
+    //       return new Error(
+    //         `Hey, the component ${componentName} needs the prop ${propName} to be a string, but a ${typeof props[
+    //           propName
+    //         ]} was passed`,
+    //       )
+    //     }
+    //   },
+    // }
+
     function Message({subject, greeting}) {
       return (
         <div className="message">
@@ -74,6 +86,6 @@
     )
 
     // 💯 This is only the first step to making actual React components. The rest is in the extra credit!
-    ReactDOM.render(element, document.getElementById('root'))
+    ReactDOM.render(fragmentElement, document.getElementById('root'))
   </script>
 </body>
