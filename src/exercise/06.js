@@ -24,14 +24,14 @@ function UsernameForm({onSubmitUsername}) {
   function handleSubmit(event) {
     event.preventDefault()
     const usernameValue = event.target.elements.usernameInput.value
-    onSubmitUsername(userNameValue)
+    onSubmitUsername(usernameValue)
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="usernameInput">Username:</label>
-        <input ref={usernameInputRef} id="usernameInput" type="text" />
+        <input id="usernameInput" type="text" />
       </div>
       <button type="submit">Submit</button>
     </form>
