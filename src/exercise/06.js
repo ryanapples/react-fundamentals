@@ -11,12 +11,6 @@ function UsernameForm({onSubmitUsername}) {
   // 📜 https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
   //
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    const usernameValue = event.target.elements.usernameInput.value
-    onSubmitUsername(usernameValue)
-  }
-
   // 🐨 get the value from the username input (using whichever method
   // you prefer from the options mentioned in the instructions)
   // 💰 For example: event.target.elements[0].value
@@ -26,11 +20,18 @@ function UsernameForm({onSubmitUsername}) {
 
   // 🐨 make sure to associate the label to the input.
   // to do so, set the value of 'htmlFor' prop of the label to the id of input
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    const usernameValue = event.target.elements.usernameInput.value
+    onSubmitUsername(userNameValue)
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="usernameInput">Username:</label>
-        <input id="usernameInput" type="text" />
+        <input ref={usernameInputRef} id="usernameInput" type="text" />
       </div>
       <button type="submit">Submit</button>
     </form>
